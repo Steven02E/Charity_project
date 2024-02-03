@@ -54,7 +54,36 @@ app.get('/charities', (req, res) => {
   });
 });
 
-// ... (rest of your route handlers)
+app.post('/login', urlencodedParser, (req, res) => {
+  // After successful authentication, store user information in the session
+  req.session.user = { /* user data from the database */ };
+  // Redirect to the user's dashboard or home page
+});
+
+app.get('/', function (req, res) { // Fix parentheses to curly braces
+    res.render('index');
+});
+
+app.get('/home', (req, res) => {
+  res.render('home');
+});
+
+app.get('/charities', (req, res) => {
+  res.render('charities');
+});
+
+app.get('/areas', (req, res) => {
+  res.render('areas');
+});
+
+app.get('/feedback', (req, res) => {
+  res.render('feedback');
+});
+
+app.get('/visits', (req, res) => {
+  res.render('visits');
+});
+
 
 const server = app.listen(3000, function () {
   console.log('Server is listening on port 3000');
