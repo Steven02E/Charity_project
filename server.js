@@ -1,7 +1,10 @@
+const express = require('express');
 const session = require('express-session');
-var express = require('express');
+
+const app = express();
+
+
 var bodyParser = require('body-parser');
-var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: true }); // Fix typo here
 
 var mysql = require('mysql');
@@ -17,11 +20,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.set("view engine", "pug");
 
-app.use(session({
-  secret: '',
-  resave: false,
-  saveUninitialized: true,
-}));
 
 // Run your SQL queries
 db.query(`

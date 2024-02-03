@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h2 Login
+  form(action='/login', method='POST')
+    label(for='organization') Organization:
+    input(type='text', id='user_name', name='user_name', required)
+    br
+
+    label(for='email') Email Address:
+    input(type='email', id='email', name='email', required)
+    br
+
+    label(for='password') Password:
+    input(type='password', id='password', name='password', required)
+    br
+
+    button(type='submit') Login
+
+  p
+    | Don't have an account? 
+    a(href='/register') Register here.
