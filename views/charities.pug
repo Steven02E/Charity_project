@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  br
+  h2 Charities
+  // Display information about charities from the database here.
+
+layout.pug
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title CHARITY MANAGEMENT SYSTEM
+    style.
+      body {
+        background-color: rgb(25, 123, 123);
+        margin: 0 15% 0 15%;
+        font-family: sans-serif;
+      }
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+        border-bottom: 2px solid white;
+        margin-top: 30px;
+      }
+      h2 {}
+      footer {
+        background-color: rgb(177, 185, 185);
+        text-align: center;
+        border-bottom: 2px;
+      }
+      img {
+        size: 50px;
+      }
+      .top-nav {
+        background-color: rgb(177, 185, 185);
+        overflow: hidden;
+      }
+      .top-nav a {
+        float: left;
+        color: black;
+        padding: 16px 16px;
+        text-decoration: none;
+      }
+
+  body
+    h1
+      img(src='image/logo.png' alt='logo')
+      br
+      | Charity Management System
+
+  .top-nav
+    a(href='/home') Home
+    a(href='/charities') Charities
+    a(href='/history') Donation History
+    a(href='/areas') Manage Areas
+    a(href='/feedback') User Feedback
+    a(href='/visits') User Visits
+    a(href='/login') Log In
+
+  block content
+  footer CHARITY @2023
